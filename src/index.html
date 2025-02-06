@@ -2,9 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Tic-Tac-Toe</title>
+    <link rel="icon" href="./static/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./static/style.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
-
+    <header>
+        <div id="current-move">Current move: X</div>
+        <h1>Tic-Tac-Toe</h1>
+        <label class="theme-switch" for="theme-toggle">
+            Dark Mode
+            <input type="checkbox" id="theme-toggle">
+        </label>
+    </header>
+    <main>
+        <div class="board">
+            <div class="row">
+                <button data-index="0"></button>
+                <button data-index="1"></button>
+                <button data-index="2"></button>
+            </div>
+            <div class="row">
+                <button data-index="3"></button>
+                <button data-index="4"></button>
+                <button data-index="5"></button>
+            </div>
+            <div class="row">
+                <button data-index="6"></button>
+                <button data-index="7"></button>
+                <button data-index="8"></button>
+            </div>
+        </div>
+        <button id="restart-btn">Restart Game</button>
+    </main>
+    <!-- Win overlay -->
+    <div id="win-overlay">
+        <p id="win-message"></p>
+    </div>
 </body>
 </html>

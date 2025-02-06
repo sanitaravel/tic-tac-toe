@@ -1,0 +1,163 @@
+/* Font Face */
+@font-face {
+    font-family: 'xkcd';
+    src: url('./fonts/xkcd-Regular.otf') format('opentype');
+}
+
+/* ---------- Themes ---------- */
+
+/* Light Theme (default) */
+:root {
+    --background-color: #ffffff;
+    --text-color: #263238;
+    --primary-color: #00695c;
+    --secondary-color: #ffa000;
+    --accent-color: #40c4ff;
+}
+
+/* Dark Theme */
+.dark-theme {
+    --background-color: #263238;
+    --text-color: #eceff1;
+    --primary-color: #82aaff;
+    --secondary-color: #ffab40;
+    --accent-color: #80d8ff;
+}
+
+/* ---------- Global Styles ---------- */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'xkcd', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+/* ---------- Layout ---------- */
+header, main {
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+/* Main Content Centering */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header Styling */
+header {
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+/* Theme Switch (right) */
+.theme-switch {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Current Move (left) */
+#current-move {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* ---------- Board & Button Styles ---------- */
+.board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.board button {
+    width: 15rem;
+    height: 15rem;
+    border: 2px solid var(--primary-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 12rem;
+    cursor: pointer;
+}
+
+.board button:disabled {
+    cursor: default;
+}
+
+body:not(.dark-theme) .board button.preview {
+    opacity: 0.5;
+}
+
+body.dark-theme .board button.preview {
+    opacity: 0.7;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+/* ---------- Overlay & Restart ---------- */
+#win-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--text-color);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+#win-overlay p {
+    font-size: 3rem;
+    background: var(--background-color);
+    padding: 2rem;
+    border: 2px solid var(--primary-color);
+}
+
+#win-overlay button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#restart-btn {
+    margin-top: 2rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#restart-btn:hover {
+    background-color: var(--accent-color);
+}
