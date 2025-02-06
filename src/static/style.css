@@ -161,3 +161,69 @@ body.dark-theme .board button.preview {
 #restart-btn:hover {
     background-color: var(--accent-color);
 }
+
+/* ---------- Responsive Styles ---------- */
+@media screen and (max-width: 1024px) {
+    header h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+    }
+    #current-move {
+        font-size: clamp(1rem, 3vw, 1.5rem);
+    }
+    .board button {
+        width: clamp(8rem, 20vw, 15rem);
+        height: clamp(8rem, 20vw, 15rem);
+        font-size: clamp(4rem, 10vw, 12rem);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header h1 {
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+    }
+    #current-move {
+        font-size: clamp(0.8rem, 3vw, 1.2rem);
+    }
+    .board button {
+        width: clamp(6rem, 25vw, 10rem);
+        height: clamp(6rem, 25vw, 10rem);
+        font-size: clamp(3rem, 8vw, 8rem);
+    }
+    /* Adjust layout spacing if needed */
+    header, main {
+        padding: 0.5rem;
+    }
+}
+
+/* ---------- Responsive Vertical Adjustments ---------- */
+@media screen and (max-height: 600px) {
+    header h1 {
+        font-size: clamp(1.2rem, 2vh, 2.5rem);
+    }
+    #current-move {
+        font-size: clamp(0.8rem, 2vh, 1rem);
+    }
+    .board button {
+        width: clamp(6rem, 20vh, 8rem);
+        height: clamp(6rem, 20vh, 8rem);
+        font-size: clamp(3rem, 6vh, 6rem);
+    }
+    header, main {
+        padding: 0.5rem;
+    }
+}
+
+/* Additional step for very small vertical screens */
+@media screen and (max-height: 800px) {
+    header {
+        margin: 0.25rem;
+    }
+    main {
+        padding: 0.25rem;
+    }
+    .board button {
+        width: clamp(5rem, 15vh, 7rem);
+        height: clamp(5rem, 15vh, 7rem);
+        font-size: clamp(2rem, 5vh, 5rem);
+    }
+}
